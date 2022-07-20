@@ -278,17 +278,17 @@ int main ()
 
         int n = 4;
 
-        for (int i = 1;i<=n;i++) //outer loop
+        for (int i = 1;i<=n;i++) 
         {
-            for (int j = i; j<=n; j++) //colums loop
+            for (int j = i; j<=n; j++)
             {
                 cout << "  ";
             }
-            for (int j = 1; j<i; j++) //colums loop
+            for (int j = 1; j<i; j++)
             {
                 cout << "* ";
             }
-            for (int j = 1; j<=i; j++) //colums loop
+            for (int j = 1; j<=i; j++)
             {
                 cout << "* ";
             }
@@ -304,34 +304,34 @@ int main ()
 
         int x = 4;
 
-        for (int i = 1;i<x;i++) //outer loop
+        for (int i = 1;i<x;i++)
         {
-            for (int j = i; j<=x; j++) //colums loop
+            for (int j = i; j<=x; j++)
             {
                 cout << "  ";
             }
-            for (int j = 1; j<i; j++) //colums loop
+            for (int j = 1; j<i; j++)
             {
                 cout << "* ";
             }
-            for (int j = 1; j<=i; j++) //colums loop
+            for (int j = 1; j<=i; j++)
             {
                 cout << "* ";
             }
             cout << "\n";
         }
 
-        for (int i = 1;i<=x;i++) //outer loop
+        for (int i = 1;i<=x;i++)
         {
-            for (int j = 1; j<=i; j++) //colums loop
+            for (int j = 1; j<=i; j++)
             {
                 cout << "  ";
             }
-            for (int j = i; j<x; j++) //colums loop
+            for (int j = i; j<x; j++)
             {
                 cout << "* ";
             }
-            for (int j = i; j<=x; j++) //colums loop
+            for (int j = i; j<=x; j++)
             {
                 cout << "* ";
             }
