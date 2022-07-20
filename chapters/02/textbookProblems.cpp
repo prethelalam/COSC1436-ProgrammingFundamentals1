@@ -276,8 +276,24 @@ int main ()
 
         cout << "17.\n"; //formatting cout for display. Not apart of the problem.
 
-        // will come back to this
+        int n = 4;
 
+        for (int i = 1;i<=n;i++) //outer loop
+        {
+            for (int j = i; j<=n; j++) //colums loop
+            {
+                cout << "  ";
+            }
+            for (int j = 1; j<i; j++) //colums loop
+            {
+                cout << "* ";
+            }
+            for (int j = 1; j<=i; j++) //colums loop
+            {
+                cout << "* ";
+            }
+            cout << "\n";
+        }
         cout << "\n"; //formatting cout for display. Not apart of the problem.
 
     /* 18. Diamond Pattern:
@@ -286,7 +302,41 @@ int main ()
 
         cout << "18.\n"; //formatting cout for display. Not apart of the problem.
 
-        // will come back to this
+        int x = 4;
+
+        for (int i = 1;i<x;i++) //outer loop
+        {
+            for (int j = i; j<=x; j++) //colums loop
+            {
+                cout << "  ";
+            }
+            for (int j = 1; j<i; j++) //colums loop
+            {
+                cout << "* ";
+            }
+            for (int j = 1; j<=i; j++) //colums loop
+            {
+                cout << "* ";
+            }
+            cout << "\n";
+        }
+
+        for (int i = 1;i<=x;i++) //outer loop
+        {
+            for (int j = 1; j<=i; j++) //colums loop
+            {
+                cout << "  ";
+            }
+            for (int j = i; j<x; j++) //colums loop
+            {
+                cout << "* ";
+            }
+            for (int j = i; j<=x; j++) //colums loop
+            {
+                cout << "* ";
+            }
+            cout << "\n"; 
+        }
 
         cout << "\n"; //formatting cout for display. Not apart of the problem.
 
@@ -326,6 +376,41 @@ int main ()
         cout << "There are " << BoughtOneOrMore << " customers who bought one or more energy drinks per week.\n";
         cout << "Of those customers who bought one or more energy drinks per week, " << PreferCitrus << " prefer citrus.\n";
         cout << "\n"; //formatting cout for display. Not apart of the problem.
+
+    /* 21. Annual High Temperatures:
+    The average July high temperarure is 85 degrees Fahrenheit in New York City, 88 degrees Fahrenheit in Denver, and 106 degrees Fahrenheit in Phoenix. Write a program that calculates and reports what the new average July high temperature would be for each of these cities if temperatures rise by 2 percent. */
+
+        cout << "21.\n"; //formatting cout for display. Not apart of the problem.
+
+        double NewYorkTemperture, NewYorkAverageTemperture, PhoenixTemperture, PhoenixAverageTemperture, DenverTemperture, DenverAverageTemperture;
+        const double TempertureIncrease = 0.02;
+
+        NewYorkTemperture = 85 * TempertureIncrease;
+        NewYorkAverageTemperture = 85 + NewYorkTemperture;
+        DenverTemperture = 88 * TempertureIncrease;
+        DenverAverageTemperture = 88 + DenverTemperture;
+        PhoenixTemperture = 106 * TempertureIncrease;
+        PhoenixAverageTemperture = 106 + PhoenixTemperture;
+
+        
+        cout << "The new average temperture in New York during the month of July will be " << NewYorkAverageTemperture << " degrees.\n";
+        cout << "The new average temperture in Denver during the month of July will be " << DenverAverageTemperture << " degrees.\n";
+        cout << "The new average temperture in Phoenix during the month of July will be " << PhoenixAverageTemperture << " degrees.\n";
+        cout << "\n"; //formatting cout for display. Not apart of the problem.
+
+    /* 22. How Much Paint:
+    A particular brand of paint covers 340 square feet per gallon. Write a program to determine and report approximately how many gallons of paint will be needed to paint two coats on a wooden fence that is 6 feet high and 100 feet long. */ 
+
+        cout << "22.\n"; //formatting cout for display. Not apart of the problem.
+
+        double WoodenFence = 1200, OneGallon = 340, GallonsOfPaintUsed;
+
+        GallonsOfPaintUsed = WoodenFence / OneGallon;
+
+        cout << "In order to paint two coats of the wooden fence, you would require " << GallonsOfPaintUsed << " gallons of paint.\n";
+        cout << "\n";
+
+
 
 
 
