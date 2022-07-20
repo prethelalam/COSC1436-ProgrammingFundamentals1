@@ -276,25 +276,11 @@ int main ()
 
         cout << "17.\n"; //formatting cout for display. Not apart of the problem.
 
-        int n = 4;
-
-        for (int i = 1;i<=n;i++) 
-        {
-            for (int j = i; j<=n; j++)
-            {
-                cout << "  ";
-            }
-            for (int j = 1; j<i; j++)
-            {
-                cout << "* ";
-            }
-            for (int j = 1; j<=i; j++)
-            {
-                cout << "* ";
-            }
-            cout << "\n";
-        }
-        cout << "\n"; //formatting cout for display. Not apart of the problem.
+        cout << "         *      " << endl;
+        cout << "       * * *     " << endl;
+        cout << "     * * * * *    " << endl;
+        cout << "   * * * * * * *   " << endl;
+        cout << "\n"; //formatting cout for display. Not apart of the problem. */
 
     /* 18. Diamond Pattern:
     Write a program that displays the a diamong pattern with asterisks. */
@@ -302,43 +288,14 @@ int main ()
 
         cout << "18.\n"; //formatting cout for display. Not apart of the problem.
 
-        int x = 4;
-
-        for (int i = 1;i<x;i++)
-        {
-            for (int j = i; j<=x; j++)
-            {
-                cout << "  ";
-            }
-            for (int j = 1; j<i; j++)
-            {
-                cout << "* ";
-            }
-            for (int j = 1; j<=i; j++)
-            {
-                cout << "* ";
-            }
-            cout << "\n";
-        }
-
-        for (int i = 1;i<=x;i++)
-        {
-            for (int j = 1; j<=i; j++)
-            {
-                cout << "  ";
-            }
-            for (int j = i; j<x; j++)
-            {
-                cout << "* ";
-            }
-            for (int j = i; j<=x; j++)
-            {
-                cout << "* ";
-            }
-            cout << "\n"; 
-        }
-
-        cout << "\n"; //formatting cout for display. Not apart of the problem.
+        cout << "         *      " << endl;
+        cout << "       * * *     " << endl;
+        cout << "     * * * * *    " << endl;
+        cout << "   * * * * * * *   " << endl;
+        cout << "     * * * * *    " << endl;
+        cout << "       * * *     " << endl;
+        cout << "         *      " << endl;
+        cout << "\n"; //formatting cout for display. Not apart of the problem. */
 
     /* 19. Stock Commission:
     Kathryn bought 750 shares of stock at a price of $35.00 per share. She must pay her stockbroker a 2 percent commission for the transaction. Write a program that calculates and displays the following:
