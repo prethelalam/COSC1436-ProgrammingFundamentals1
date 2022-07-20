@@ -410,9 +410,5 @@ int main ()
         cout << "In order to paint two coats of the wooden fence, you would require " << GallonsOfPaintUsed << " gallons of paint.\n";
         cout << "\n";
 
-
-
-
-
-return 0;
+        return 0;
 }
