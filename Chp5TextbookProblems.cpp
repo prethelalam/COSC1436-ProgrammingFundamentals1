@@ -264,7 +264,8 @@ void number9(){
             continue;
         }
 
-        cout << "How many rooms are in floor " << i << " and how many of them are occupied? (seperate by a space) " << endl;
+        cout << "How many rooms are in floor " << i 
+            << " and how many of them are occupied? (seperate by a space) " << endl;
         cin >> rooms >> occupied;
 
         while (rooms < 10)
@@ -286,7 +287,202 @@ void number9(){
 }
 
 void number10(){
+    int years, months = 12;
+    double rainfall, total = 0.0;
 
+    cout << "How many years of rainfall are you wanting to average: ";
+    cin >> years;
+
+    while (years <= 0)
+    {
+        cout << "Please enter a vaid number of years. ";
+        cin >> years;
+    }
+
+    for (int i = 1; i <= years; i++)
+    {
+        for (int j = 1; j <= months; j++)
+        {
+            cout << "How many inches of rainfall was there for month " << j << endl;
+            cin >> rainfall;
+
+                while (rainfall < 0)
+                {
+                    cout << "Enter a valid number for rainfall in inches for month " << j << endl;
+                    cin >> rainfall;
+                }
+
+            total += rainfall;
+        }
+    }
+
+    cout << years * months << " months rainfall was collected for.\n";
+    cout << "The total inches of rainfall was " << total << endl;
+    cout << "The average rainfall per month for the entire period was " 
+         << (total / (years * months)) << " inches" << endl;
+}
+
+void number11(){
+    int startingNumber, days;
+    double increase;
+
+    cout << "What is the starting number of organisms? ";
+    cin >> startingNumber;
+
+    while (startingNumber < 2)
+    {
+        cout << "Enter a valid starting number: ";
+        cin >> startingNumber;
+    }
+
+    cout << "\nWhat is the organisms daily population increase as a percentage? ";
+    cin >> increase;
+
+    while (increase <= 0)
+    {
+        cout << "Enter a valid increase percentage: ";
+        cin >> increase;
+    }
+
+    cout << "\nHow many days will the organism multiply? ";
+    cin >> days;
+
+    while (days < 1)
+    {
+        cout << "Enter a valid number of days: ";
+        cin >> days;
+    }
+    
+    cout << "\nDays\t\t" << "Population\n";
+    cout << "----------------------------------\n";
+
+double total = 0.0;
+
+    for (int i = 0; i <= days; i++)
+    {
+        //startingNumber += startingNumber; //starting number = starting number + starting number
+
+        total += startingNumber;
+
+        cout << i << "\t\t" << (total * (increase / 100)) + total << endl;
+
+        
+        //total += startingNumber;
+    }
+}
+
+void number12(){
+    double fahrenheit, celsius;
+
+    cout << "Temperature" << "\t\tCelsius\t\t\t" << "Fahrenheit\n";
+    cout << "----------------------------------------------------------\n";
+
+    for (int i = 0; i <= 20; i++)
+    {
+        fahrenheit = (9.0/5.0 * i) + 32;
+        celsius = (i - 32) * (5.0/9.0); 
+
+        cout << setprecision(2) << fixed;
+        cout << i << "\t\t\t" << celsius << "\t\t\t" << fahrenheit << endl;
+        cout << endl;
+    }
+}
+
+void number13(){
+    int number, greatest, least;
+
+    cout << "Enter an integer: ";
+    cin >> number;
+
+    greatest = number; //need an initial number to begin the comparison
+    least = number;
+
+    cout << "\nEnter a series of numbers. Enter -99 when you're finished entering your series of numbers:\n";
+
+    while (number != -99)
+    {
+        cin >> number;
+
+        if (number != -99)
+        {
+            if (number > greatest)
+            {
+                greatest = number;
+            }
+            if (number < least)
+            {
+                least = number;
+            }
+        }
+    }
+
+    cout << "The greatest number is " << greatest << endl;
+    cout << "The least number is " << least << endl;
+}
+
+void number14(){
+    int students;
+    string names, first, last;
+
+    cout << "How many students are in the class? ";
+    cin >> students;
+
+    while (students < 1 || students > 25)
+    {
+        cout << "How many students are in the class? ";
+        cin >> students;
+    }
+
+    cout << "Enter the name of a student: ";
+    cin >> names;
+
+    first = last = names;
+
+    for (int i = 1; i < students; i++)
+    {
+        cout << "enter the name of a student: ";
+        cin >> names;
+
+        if (names < first)
+        {
+            first = names;
+        }
+        if (names > last)
+        {
+            last = names;
+        }
+    }
+
+    cout << "The first student in line is " << first << endl;
+    cout << "the last student in line is " << last << endl;
+}
+
+void number15(){ //finish
+    int number;
+    double grossPay, stateTax, federalTax, FICA_Withholdings;
+
+    while(true)
+    {
+        cout << "Enter your employee number: ";
+        cin >> number;
+
+        if (number == 0)
+        {
+            break;
+        }
+
+        cout << "\nEnter your gross pay: ";
+        cin >> grossPay;
+        cout << "\nEnter your state tax: ";
+        cin >> stateTax;
+        cout << "\nEnter your federal tax: ";
+        cin >> federalTax;
+        cout << "\nEnter your FICA withholdings: ";
+        cin >> FICA_Withholdings;
+    }
+
+    cout << "Gross pay: $" << grossPay << endl;
+    cout << "Gross pay: $" << grossPay << endl;
 }
 
 
@@ -325,14 +521,33 @@ int main(){
     // number8();
     // cout << endl;
     
-    cout << "9. \n";
-    number9();
-    cout << endl;
+    // cout << "9. \n";
+    // number9();
+    // cout << endl;
     
     // cout << "10. \n";
     // number10();
     // cout << endl;
 
+    // cout << "11. \n";
+    // number11();                         //come back 
+    // cout << endl;
+
+    // cout << "12. \n";
+    // number12();
+    // cout << endl;
+
+    // cout << "13. \n";
+    // number13();
+    // cout << endl;
+
+    // cout << "14. \n";
+    // number14();
+    // cout << endl;
+
+    cout << "15. \n";
+    number15();
+    cout << endl;
 
     return 0;
 }
