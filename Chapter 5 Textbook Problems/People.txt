@@ -1,0 +1,8 @@
+PRAIREVILLE POPULATION GROWTH
+(each * represents 1,000 people)
+1900: **
+1920: ***
+1940: ****
+1960: *****
+1980: ******
+2000: *******
