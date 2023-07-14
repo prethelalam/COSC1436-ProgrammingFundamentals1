@@ -6,7 +6,7 @@
 #include <random>
 using namespace std;
 
-void number1(){
+void sumOfNumbers(){
     int value, total = 0;
 
     do
@@ -25,11 +25,11 @@ void number1(){
     }
 }
 
-void number2(){
+void findCharactersForASCIICodes(){
 // come back to
 }
 
-void number3(){
+void calcOceanLevels(){
     const double OCEAN_RISE = 1.5, MAX_YEARS = 25;
     double total = 0;
 
@@ -44,7 +44,7 @@ void number3(){
     }
 }
 
-void number4(){
+void calcCaloriesBurned(){
     const double CALORIES_BURNED = 3.6, MAX_TIME = 30;
     double total = 0;
 
@@ -59,7 +59,7 @@ void number4(){
     }
 }
 
-void number5(){  
+void calcMembershipIncrease(){  
     double MEMBERSHIP_FEE = 2500, INCREASE = 0.04, YEARS = 6;
 
     cout << "years\t\t" << "projected rates\n";
@@ -773,43 +773,205 @@ void number20(){
     cout << "Welcome to the random number game. Guess the random number and win!\n";
     cin >> guess;
 
-    while (guess > number)
+    do
     {
-        cout << "Too high, try again.\n";
-        cin >> guess;
-
-        while (guess < number)
+        if (guess > number)
+        {
+            cout << "Too high, try again.\n";
+            cin >> guess;
+        }
+        else
         {
             cout << "Too low, try again.\n";
             cin >> guess;
-        }   
+        }
     }
-    if (guess == number)
+    while (guess != number);
+
+    cout << "Congrats you guessed the number correctly!\n";
+}
+
+void number21(){
+    unsigned seed = time(0);
+    srand(seed); 
+
+    int number = rand() % 1000 - 1;
+    int guess, counter = 1;
+
+    cout << "Welcome to the random number game. Guess the random number and win!\n";
+    cin >> guess;
+
+    do
     {
-        cout << "Congrats you guessed the number correctly!\n";
+        if (guess > number)
+        {
+            cout << "Too high, try again.\n";
+            cin >> guess;
+        }
+        else
+        {
+            cout << "Too low, try again.\n";
+            cin >> guess;
+        }
+        counter++;
+    }
+    while (guess != number);
+
+    cout << "Congrats you guessed the number correctly!\n";
+    cout << "It took you " << counter << " guesses.\n";
+}
+
+void number22(){
+    int number;
+
+    cout << "Enter a postive integer that is less than 15: ";
+    cin >> number;
+
+    for (int row = 1; row <= number; ++row)
+    {
+        for (int col = 1; col <= number; ++col)
+        {
+            cout << "X";
+        }
+        cout << endl;
     }
 }
 
+void number23(){ //come back too
+    for (int row = 1; row <= 5; ++row)
+    {
+        cout << "+\n";
+
+        for (int col = 1; col >= 5; ++col)
+        {
+            cout << "+";
+        }
+        cout << endl;
+    }
+}
+
+void usingFilesNumericProcessing(){
+    ifstream inputFile; //declaring input file to read from text file
+
+    inputFile.open("Random.txt"); //opening the file to be read
+
+    int number;
+    double sum = 0.0, counter = -1.0;
+
+    if (inputFile) //check to see if file is open
+    {
+        cout << "File is open.\n";
+
+        while (inputFile) //can also put inputFile >> number as the condition
+        {
+            inputFile >> number; //reading numbers from file and storing it in number
+
+            sum += number; //adding all the numbers together
+
+            counter++; //counting how many numbers are in the file
+        }
+    }
+    else 
+    {
+        cout << "File did not open.\n";
+    }
+
+    inputFile.close(); //close the file
+
+    cout << "The number of numbers in the text file is " << counter << endl;
+    cout << "The sum of the numbers in the text file is " << sum << endl;
+    cout << "The average of the numbers in the text file is " << sum / (counter) << endl;
+}
+
+void usingFilesStudentLineUp(){
+    ofstream outputFile;
+    ifstream inputFile;
+    int students;
+    string names;
+
+    cout << "How many students are in the class? ";
+    cin >> students;
+
+    outputFile.open("LineUp.txt");
+
+    for (int i = 1; i <= students; i++)
+    {
+        cout << "Enter the name of a student.\n";
+        cin >> names;
+        outputFile << names << endl;
+        
+    }
+    
+    if (outputFile)
+    {
+        cout << "\nStudents names have been saved into the file.\n";
+    }
+    else
+    {
+        cout << "\nStudent names were not saved into the file.\n";
+    }
+
+    outputFile.close();
+
+    inputFile.open("LineUp.txt"); //open file to read names from it
+
+    if (inputFile) //check to see if file is open
+    {
+        cout << "\nFile is open. Names in the file are below.\n";
+
+        while (inputFile >> names)
+        {
+            cout << names << endl; //read names from the file
+        }
+    }
+    else 
+    {
+        cout << "File did not open.\n";
+    }
+
+    inputFile.close(); //close the file
+}
+
+void personalWebPageGenerator(){
+    ofstream outputFile;
+    string name, description;
+
+    cout << "What is your name? ";
+    getline(cin, name);
+    cout << "\nDescribe yourself: ";
+    getline(cin, description);
+
+    outputFile.open("Profile.html");
+
+    for (int i = 1; i <= 1; i++)
+    {
+        outputFile << "\t\t<h1>" << name << "</h1\n";
+        outputFile << "<\thr />\n";
+        outputFile << "\t" << description << endl;
+    }
+    
+    outputFile.close();    
+}
 
 int main(){
     // cout << "1. \n";
-    // number1();
+    // sumOfNumbers();
     // cout << endl;
 
     // cout << "2. \n";
-    // number2();           //come back to this one
+    // findCharactersForASCIICodes();           //come back to this one
     // cout << endl;
 
     // cout << "3. \n";
-    // number3();
+    // calcOceanLevels();
     // cout << endl;
 
     // cout << "4. \n";
-    // number4();
+    // calcCaloriesBurned();
     // cout << endl;
 
     // cout << "5. \n";
-    // number5();
+    // calcMembershipIncrease();
     // cout << endl;
 
     // cout << "6. \n";
@@ -871,7 +1033,30 @@ int main(){
     // cout << "20. \n";
     // number20();             
     // cout << endl;
-cout << "hellow world";
-cout << "bob";
+
+    // cout << "21. \n";
+    // number21();             
+    // cout << endl;
+
+    // cout << "22. \n";
+    // number22();             
+    // cout << endl;
+
+    // cout << "23. \n";
+    // number23();             //come back too
+    // cout << endl;
+
+    // cout << "24. \n";
+    // usingFilesNumericProcessing();
+    // cout << endl;
+
+    // cout << "25. \n";
+    // usingFilesStudentLineUp();
+    // cout << endl;
+
+    // cout << "26. \n";
+    // personalWebPageGenerator();
+    // cout << endl;
+    
     return 0;
 }
