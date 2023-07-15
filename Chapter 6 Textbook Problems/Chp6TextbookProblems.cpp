@@ -41,6 +41,11 @@ double presentValue(double, double, int);
 // 10.
 double calcFutureValue(double, double, int);
 
+// 11.
+void getScore(int);
+void calcAverage();
+int findLowest();
+
 
 int main(){
     // cout << "1.\n";
@@ -144,37 +149,46 @@ int main(){
     // }
     
 //****************************************************************************************************
-    cout << "9.\n";
+    // cout << "9.\n";
 
-    int years;
-    double futureValue, annualInterest;
+    // int years;
+    // double futureValue, annualInterest;
 
-    cout << "How much money do you want in your account in the future? ";
-    cin >> futureValue;
-    cout << "\nWhat is the annual interest rate? ";
-    cin >> annualInterest;
-    cout << "\nFow how many years do you want the money to sit in your account for? ";
-    cin >> years;
+    // cout << "How much money do you want in your account in the future? ";
+    // cin >> futureValue;
+    // cout << "\nWhat is the annual interest rate? ";
+    // cin >> annualInterest;
+    // cout << "\nFow how many years do you want the money to sit in your account for? ";
+    // cin >> years;
 
-    annualInterest /= 100;
+    // annualInterest /= 100;
 
-    cout << setprecision(2) << fixed;
-    cout << "\nYou need to deposit $" << presentValue(futureValue, annualInterest, years) << " today to have a future value of $" << futureValue;
+    // cout << setprecision(2) << fixed;
+    // cout << "\nYou need to deposit $" << presentValue(futureValue, annualInterest, years) << " today to have a future value of $" << futureValue;
 
 //****************************************************************************************************
-    cout << "10.\n";
+    // cout << "10.\n";
 
-    int time;
-    double presentValue, monthlyInterest;
+    // int time;
+    // double presentValue, monthlyInterest;
 
-    cout << "Enter your present value amount $";
-    cin >> presentValue;
-    cout << "\nWhat is the annual interest rate? ";
-    cin >> monthlyInterest;
-    cout << "\nFow how many years do you want the money to sit in your account for? ";
-    cin >> time;
+    // cout << "Enter your present value amount $";
+    // cin >> presentValue;
+    // cout << "\nWhat is the annual interest rate? ";
+    // cin >> monthlyInterest;
+    // cout << "\nFow how many years do you want the money to sit in your account for? ";
+    // cin >> time;
 
-    cout << cout << setprecision(2) << fixed << calcFutureValue(presentValue, monthlyInterest, time) << " today to have a future value of $";
+    // cout << cout << setprecision(2) << fixed << calcFutureValue(presentValue, monthlyInterest, time) << " today to have a future value of $";
+
+//****************************************************************************************************
+    cout << "11.\n";
+
+    int score;
+
+    getScore(score);
+
+
 
     return 0;
 }
@@ -340,4 +354,20 @@ double presentValue(double fv, double rate, int numOfYears){
 double calcFutureValue(double pv, double rate, int numOfYears){
 
     return pv * pow((1 + rate), numOfYears);
+}
+
+// 11.
+void getScore(int number){
+
+
+    cout << "What is your test score? ";
+    cin >> number;
+}
+
+void calcAverage(){
+
+}
+
+int findLowest(){
+
 }
