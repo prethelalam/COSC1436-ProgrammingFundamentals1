@@ -42,9 +42,30 @@ double presentValue(double, double, int);
 double calcFutureValue(double, double, int);
 
 // 11.
-void getScore(int);
-void calcAverage();
-int findLowest();
+void getScore(double&);
+void calcAverage(double, double, double, double, double);
+int findLowest(double, double, double, double, double);
+
+// 12.
+void getJudgeData(double&);
+void calcScore(double, double, double, double, double);
+int find_Lowest(double, double, double, double, double);
+int find_Highest(double, double, double, double, double);
+
+// 13.
+int getEmployeeNumber();
+int getDaysMissed(int);
+double calcAvgDaysMissed(int, int);
+
+// 14.                  //come back to this one
+int getOrderStatus();
+double calcOrder(int);
+
+// 15.
+double calcHospitalCharges(int, double, double, double);
+double calcHospitalCharges(double, double);
+
+// 16.
 
 
 int main(){
@@ -182,12 +203,100 @@ int main(){
     // cout << cout << setprecision(2) << fixed << calcFutureValue(presentValue, monthlyInterest, time) << " today to have a future value of $";
 
 //****************************************************************************************************
-    cout << "11.\n";
+    // cout << "11.\n";
 
-    int score;
+    // double score1, score2, score3, score4, score5;
 
-    getScore(score);
+    // //we're only getting the scores here
+    // getScore(score1);
+    // getScore(score2);
+    // getScore(score3);
+    // getScore(score4);
+    // getScore(score5);
 
+    // //we aren't passing the void function but the scores itself
+    // calcAverage(score1, score2, score3, score4, score5);
+
+//****************************************************************************************************
+    // cout << "12\n";
+
+    // double score1, score2, score3, score4, score5;
+
+    // getJudgeData(score1);
+    // getJudgeData(score2);
+    // getJudgeData(score3);
+    // getJudgeData(score4);
+    // getJudgeData(score5);
+
+    // calcScore(score1, score2, score3, score4, score5);
+
+//****************************************************************************************************
+    //cout << "13\n";
+    
+    // int totalDaysMissed, employeesAmt;
+
+    // employeesAmt = getEmployeeNumber(); //store the returning int in employeesAmt
+
+    // totalDaysMissed = getDaysMissed(employeesAmt); //pass employees amount, and return int in totaldays missed
+
+    // cout << "The average number of days missed was " << calcAvgDaysMissed(totalDaysMissed, employeesAmt) << " days\n";
+
+//****************************************************************************************************
+    // cout << "14.\n";
+
+    // int spoolsOrderAmt, spoolsStockAmt, specialChargeAmt, amounts;
+
+    // amounts = getOrderStatus();
+    // spoolsStockAmt = getOrderStatus();
+    // specialChargeAmt = getOrderStatus();
+
+    //cout << amounts;
+
+    // calcOrder(getOrderStatus());
+
+//****************************************************************************************************
+    // cout << "15.\n";
+
+    // string answer;
+    // int days;
+    // double rate, charges, serviceCharge, outCharges, outServiceCharge;
+
+    // cout << "Were you admitted as an inpatient or outpatient? ";
+    // cin >> answer;
+
+    // if (answer == "inpatient")
+    // {
+    //     do
+    //     {
+    //         cout << "How many days did you spend in the hospital? ";
+    //         cin >> days;
+    //         cout << "\nWhat was the daily rate? ";
+    //         cin >> rate;
+    //         cout << "\nWhat was the hospital medication charges? ";
+    //         cin >> charges;
+    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+    //         cin >> serviceCharge;
+    //     }
+    //     while (days <= 0 || rate <= 0.0 || charges <= 0.0 || serviceCharge <= 0.0);
+
+    //     cout << "Your hospital bill is $" << setprecision(2) << fixed << calcHospitalCharges(days, rate, charges, serviceCharge);
+    // }
+    // else if (answer == "outpatient")
+    // {
+    //     do
+    //     {
+    //         cout << "\nWhat was the hospital medication charges? ";
+    //         cin >> outCharges;
+    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+    //         cin >> outServiceCharge;
+    //     }
+    //     while (outCharges <= 0.0 || outServiceCharge <= 0.0);
+
+    //     cout << "Your hospital bill is $" << setprecision(2) << fixed << calcHospitalCharges(outCharges, outServiceCharge);
+    // }
+
+//****************************************************************************************************
+    cout << "16.\n";
 
 
     return 0;
@@ -357,17 +466,297 @@ double calcFutureValue(double pv, double rate, int numOfYears){
 }
 
 // 11.
-void getScore(int number){
-
+void getScore(double& grade){
 
     cout << "What is your test score? ";
-    cin >> number;
+    cin >> grade;
+
+    while (grade < 0 || grade > 100)
+    {
+        cout << "Enter a valid test score: ";
+        cin >> grade;  //grade is getting passed to main when we call the function
+    }
 }
 
-void calcAverage(){
+void calcAverage(double num1, double num2, double num3, double num4, double num5){
+
+    if (num1 == findLowest(num1, num2, num3, num4, num5))
+    {
+        cout << "The average of the four highest scores is ";
+        cout << (num2 + num3 + num4 + num5) / 4 << endl;
+    }
+    else if (num2 == findLowest(num1, num2, num3, num4, num5))
+    {
+        cout << "The average of the four highest scores is ";
+        cout << (num1 + num3 + num4 + num5) / 4 << endl;
+    }
+    else if (num3 == findLowest(num1, num2, num3, num4, num5))
+    {
+        cout << "The average of the four highest scores is ";
+        cout << (num1 + num2 + num4 + num5) / 4 << endl;
+    }
+    else if (num4 == findLowest(num1, num2, num3, num4, num5))
+    {
+        cout << "The average of the four highest scores is ";
+        cout << (num1 + num2 + num3 + num5) / 4 << endl;
+    }
+    else
+    {
+        cout << "The average of the four highest scores is ";
+        cout << (num1 + num2 + num3 + num4) / 4 << endl;
+    }
+}
+
+int findLowest(double num1, double num2, double num3, double num4, double num5){
+    double lowest;
+
+    if (num1 <= num2 && num1 <= num3 && num1 <= num4 && num1 <= num5)
+    {
+        lowest = num1;
+        return num1;
+    }
+    else if (num2 <= num1 && num2 <= num3 && num2 <= num4 && num2 <= num5)
+    {
+        lowest = num2;
+        return num2;
+    }
+    else if (num3 <= num1 && num3 <= num2 && num3 <= num4 && num3 <= num5)
+    {
+        lowest = num3;
+        return num3;
+    }
+    else if (num4 <= num1 && num4 <= num2 && num4 <= num3 && num4 <= num5)
+    {
+        lowest = num4;
+        return num4;
+    }
+    else 
+    {
+        lowest = num5;
+        return num5;
+    }
+}
+
+// 12.
+
+void getJudgeData(double& score) //this gets passed to lines 211 to 215
+{
+    do
+    {
+        cout << "Enter a score for the performance: ";
+        cin >> score; //this is passed to line 462
+    }
+    while(score < 0 || score > 10);
+}
+
+void calcScore(double point1, double point2, double point3, double point4, double point5) //passed to line 217
+{
+    double lowest, highest; 
+
+    if (point1 == find_Lowest(point1, point2, point3, point4, point5))
+    {
+        lowest = point1; //gets passed to line 472
+    }
+    else if (point2 == findLowest(point1, point2, point3, point4, point5))
+    {
+        lowest = point2;
+    }
+    else if (point4 == findLowest(point1, point2, point3, point4, point5))
+    {
+        lowest = point4;
+    }
+    else if (point4 == findLowest(point1, point2, point3, point4, point5))
+    {
+        lowest = point4;
+    }
+    else
+    {
+        lowest = point5;
+    }
+
+    if (point1 == find_Highest(point1, point2, point3, point4, point5))
+    {
+        highest = point1; //gets passed to line 472
+    }
+    else if (point2 == find_Highest(point1, point2, point3, point4, point5))
+    {
+        highest = point2;
+    }
+    else if (point4 == find_Highest(point1, point2, point3, point4, point5))
+    {
+        highest = point4;
+    }
+    else if (point4 == find_Highest(point1, point2, point3, point4, point5))
+    {
+        highest = point4;
+    }
+    else
+    {
+        highest = point5;
+    }
+
+    cout << "The average of the 3 scores is ";
+    cout << ((point1 + point2 + point3 + point4 + point5) - (highest + lowest)) / 3;
 
 }
 
-int findLowest(){
+int find_Lowest(double num1, double num2, double num3, double num4, double num5) //gets passed to line 476
+{
+    double lowest;
 
+    if (num1 <= num2 && num1 <= num3 && num1 <= num4 && num1 <= num5)
+    {
+        lowest = num1;
+        return num1; //passed to line 498
+    }
+    else if (num2 <= num1 && num2 <= num3 && num2 <= num4 && num2 <= num5)
+    {
+        lowest = num2;
+        return num2;
+    }
+    else if (num3 <= num1 && num3 <= num2 && num3 <= num4 && num3 <= num5)
+    {
+        lowest = num3;
+        return num3;
+    }
+    else if (num4 <= num1 && num4 <= num2 && num4 <= num3 && num4 <= num5)
+    {
+        lowest = num4;
+        return num4;
+    }
+    else 
+    {
+        lowest = num5;
+        return num5;
+    }
 }
+
+int find_Highest(double grade1, double grade2, double grade3, double grade4, double grade5)
+{
+    double highest;
+
+    if (grade1 >= grade2 && grade1 >= grade3 && grade1 >= grade4 && grade1 >= grade5)
+    {
+        highest = grade1;
+        return grade1;
+    }
+    else if (grade2 >= grade1 && grade2 >= grade3 && grade2 >= grade4 && grade2 >= grade5)
+    {
+        highest = grade2;
+        return grade2;
+    }
+    else if (grade3 >= grade1 && grade3 >= grade2 && grade3 >= grade4 && grade3 >= grade5)
+    {
+        highest = grade3;
+        return grade3;
+    }
+    else if (grade4 >= grade1 && grade4 >= grade2 && grade4 >= grade3 && grade4 >= grade5)
+    {
+        highest = grade4;
+        return grade4;
+    }
+    else 
+    {
+        highest = grade5;
+        return grade5;
+    }
+}
+
+// 13.
+int getEmployeeNumber(){
+    int employeesAmt;
+
+    cout << "How many employees do you have? ";
+    cin >> employeesAmt;
+    
+    while(employeesAmt <= 0)
+    {
+        cout << "Enter a positive number: ";
+        cin >> employeesAmt;
+    }
+
+    return employeesAmt;
+}
+
+int getDaysMissed(int amount){
+    int daysMissed, totalDaysMissed = 0;
+
+    for (int i = 1; i <= amount; i++)
+    {      
+        cout << "How many days did this employee miss? ";
+        cin >> daysMissed;
+
+        while(daysMissed < 0)
+        {
+            cout << "Enter a positive number: ";
+            cin >> daysMissed;
+        }
+
+        totalDaysMissed += daysMissed;
+    }
+
+    return totalDaysMissed;
+}
+
+double calcAvgDaysMissed(int missed, int people){
+    double AvgMissed = missed / people;
+
+    return AvgMissed;
+}
+
+// 14.                      //come back to this one
+int getOrderStatus(){
+    int spoolsOrdered, spoolsStock, specialCharge;
+    string answer;
+
+    cout << "How many spools are you ordering? ";
+    cin >> spoolsOrdered;
+    cout << "\nHow many spools are in stock? ";
+    cin >> spoolsStock;
+    cout << "\nAre there any special shipping and handling chargers (enter yes or no)? ";
+    cin >> answer;
+
+    
+    while(spoolsOrdered < 1 || spoolsStock < 0)
+    {
+        if (spoolsOrdered < 1)
+        {
+            cout << "\nYou must order at least 1 spool. How many spools would you like to order? ";
+            cin >> spoolsOrdered;
+        }
+        if (spoolsStock < 0)
+        {
+            cout << "\nYou must a a positive number for the amount of spools in stock. How many spools are in stock? ";
+            cin >> spoolsStock;
+        }
+    }
+
+    if (answer == "yes" || answer == "Yes")
+    {
+        cout << "\nHow much are the special chargers per spool? ";
+        cin >> specialCharge;
+    }
+    else
+    {
+        specialCharge = 10;
+    }
+    return spoolsOrdered;
+    return spoolsStock;
+    return specialCharge;
+}
+
+// 15.
+double calcHospitalCharges(int hospDays, double dailyRate, double medCharges, double hospCharges){
+    double totalCharges = (hospDays * dailyRate) + medCharges + hospCharges;
+
+    return totalCharges;
+}
+
+double calcHospitalCharges(double outPtCharges, double outPtservice){
+    double totalCharges = outPtCharges + outPtservice;
+
+    return totalCharges;
+}
+
+// 16.
+
