@@ -66,6 +66,16 @@ double calcHospitalCharges(int, double, double, double);
 double calcHospitalCharges(double, double);
 
 // 16.
+void getPopulationSize(int, int, int, int);
+
+// 17.
+void getPopulationSize(int, int, int, int, int, int);
+
+// 18.
+int getRooms();
+double getSquareFeet(int);
+double getPaintPrice();
+void calcJobPrice(int, double, double);
 
 
 int main(){
@@ -296,8 +306,63 @@ int main(){
     // }
 
 //****************************************************************************************************
-    cout << "16.\n";
+    // cout << "16.\n";
 
+    // int population, birthRate, deathRate, years;
+
+    // do
+    // {
+    //     cout << "What is the starting size of the population? ";
+    //     cin >> population;
+    //     cout << "\nWhat is the annual birth rate? ";
+    //     cin >> birthRate;
+    //     cout << "\nWHat is the annual death rate? ";
+    //     cin >> deathRate;
+    //     cout << "\nHow many years into the future do you want to see the population size? ";
+    //     cin >> years;
+
+    // } while (population < 2 || birthRate < 0 || deathRate < 0 || years < 1);
+    
+    // getPopulationSize(population, birthRate, deathRate, years);
+
+//****************************************************************************************************
+    // cout << "17.\n";
+
+    // int population, birthRate, deathRate, numYears, moveIn, moveOut;
+
+    // do
+    // {
+    //     cout << "What is the starting size of the population? ";
+    //     cin >> population;
+    //     cout << "\nWhat is the annual birth rate? ";
+    //     cin >> birthRate;
+    //     cout << "\nWhat is the annual death rate? ";
+    //     cin >> deathRate;
+    //     cout << "\nHow many people typically move into this area per year? ";
+    //     cin >> moveIn;
+    //     cout << "\nHow many people typically leave this area per year? ";
+    //     cin >> moveOut;
+    //     cout << "\nHow many years into the future do you want to see the population size? ";
+    //     cin >> numYears;
+
+    // } while (population < 2 || birthRate < 0 || deathRate < 0 || numYears < 1 || moveIn < 0 || moveOut < 0);
+    
+    // getPopulationSize(population, birthRate, deathRate, numYears, moveIn, moveOut);
+
+//****************************************************************************************************
+    cout << "18.\n";
+
+    int numRooms;
+    double paintPrice, squareFoot;
+
+    numRooms = getRooms();
+
+    squareFoot = getSquareFeet(numRooms);
+
+    paintPrice = getPaintPrice();
+
+    calcJobPrice(numRooms, squareFoot, paintPrice);
+    
 
     return 0;
 }
@@ -716,7 +781,6 @@ int getOrderStatus(){
     cout << "\nAre there any special shipping and handling chargers (enter yes or no)? ";
     cin >> answer;
 
-    
     while(spoolsOrdered < 1 || spoolsStock < 0)
     {
         if (spoolsOrdered < 1)
@@ -759,4 +823,88 @@ double calcHospitalCharges(double outPtCharges, double outPtservice){
 }
 
 // 16.
+void getPopulationSize(int startingPop, int birth, int death, int amount){
+    for (int i = 1; i <= amount; i++)
+    {
+        int newPop = startingPop + ((birth - death) * i);
 
+        cout << "New population size for Year " << i << " in the future: " << newPop << endl;
+    }
+}
+
+// 17.
+void getPopulationSize(int startPop, int birth, int death, int years, int arrivals, int departures){
+    for (int i = 1; i <= years; i++)
+    {
+        int newPop = startPop + (((birth + arrivals) - (death + departures)) * i);
+
+        cout << "New population size for Year " << i << " in the future: " << newPop << endl;
+    }
+}
+
+// 18.
+int getRooms(){
+    int rooms;
+    
+    do
+    {
+        cout << "How rooms need to be painted? ";
+        cin >> rooms;
+        
+    } while(rooms < 1);
+
+    return rooms;
+}
+
+double getSquareFeet(int roomCount){
+    double squareFeet, totalSquareFeet = 0;    
+
+    for (int i = 1; i <= roomCount; i++)
+    {
+        cout << "\nWhat is the square footage of room " << i << endl;
+        cin >> squareFeet;
+
+        while(squareFeet < 0)
+        {
+            cout << "\nEnter a valid number of square feet: ";
+            cin >> squareFeet;
+        }
+            
+        totalSquareFeet += squareFeet;
+    }
+    
+    return totalSquareFeet;
+}
+
+double getPaintPrice (){
+    double paintPrice;
+
+    cout << "\nHow much is the price of paint per gallon? ";
+    cin >> paintPrice;
+
+    while (paintPrice < 10.00)
+    {
+        cout << "\nEnter a valid cost for paint: ";
+        cin >> paintPrice;
+    }
+
+    return paintPrice;
+}
+
+void calcJobPrice(int roomAmt, double squareFeet, double paintPriceGallon){
+    double const standardSF = 110.00, standardHour = 8, hourlyCharge = 25.00;
+
+    double GallonsOfPaint = squareFeet / standardSF;
+    int timeOfLabor = GallonsOfPaint * standardHour;
+    double costOfPaint = GallonsOfPaint * paintPriceGallon;
+    double laborCharges = timeOfLabor * hourlyCharge;
+    double totalCost = costOfPaint + laborCharges;
+
+    cout << setprecision(0) << fixed;
+    cout << "\nThe number of gallons required is " << GallonsOfPaint << endl;
+    cout << "The hours of labor required is " << timeOfLabor << endl;
+    cout << setprecision(2) << fixed;
+    cout << "The cost of the paint is $" << costOfPaint << endl;
+    cout << "The labor charges is $" << laborCharges << endl;
+    cout << "The total cost of the paint job is $" << totalCost << endl;
+}
