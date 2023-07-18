@@ -86,439 +86,475 @@ double calcsHospitalCharges(double, double);
 double calcStockProfit(int, double, double, double, double);
 
 // 22.
-bool isPrime(int);      //come back too
+bool isPrime(int);  
 
+// 23. 
+void printAllPrime();   //come back too
+
+//24.
+void displayGameIntro();
+int generateRandomNumber();
+int getPlayersMove();
+void displayComputersChoice(int);
+void decideWinner(int, int);
 
 int main(){
-    // cout << "1.\n";
+    cout << "1.\n";
 
-    // double wholesaleCost, markUp;
+    double wholesaleCost, markUp;
 
-    // cout << "Enter an item's wholesale cost: ";
-    // cin >> wholesaleCost; 
+    cout << "Enter an item's wholesale cost: ";
+    cin >> wholesaleCost; 
 
-    // while (wholesaleCost <= 0)
-    // {
-    //     cout << "\nEnter a valid wholesale cost: ";
-    //     cin >> wholesaleCost;
-    // }
+    while (wholesaleCost <= 0)
+    {
+        cout << "\nEnter a valid wholesale cost: ";
+        cin >> wholesaleCost;
+    }
 
-    // cout << "\nEnter the markup percentage: ";
-    // cin >> markUp;
+    cout << "\nEnter the markup percentage: ";
+    cin >> markUp;
 
-    // while (markUp <= 0)
-    // {
-    //     cout << "\nEnter a valid markup percentage: ";
-    //     cin >> markUp;
-    // }
+    while (markUp <= 0)
+    {
+        cout << "\nEnter a valid markup percentage: ";
+        cin >> markUp;
+    }
 
-    // markUp /= 100;
+    markUp /= 100;
 
-    // cout << setprecision(2) << fixed << "The items retail price is $" << calcRetail(wholesaleCost, markUp);
-
-//****************************************************************************************************
-    // cout << "2.\n";
-
-//     double length, width, area; 
-//     int lengthInt, widthInt; 
-
-//     cout << "Enter the rectangles length and width (use a space to seperate the numbers: ";
-//     cin >> lengthInt >> widthInt;
-
-//    // Get the rectangle's length.
-//     length = getLength(lengthInt); 
-
-//    // Get the rectangle's width.
-//     width = getWidth(widthInt);
-
-//    // Get the rectangle's area.
-//     area = getArea(length, width);
-
-//    // Display the rectangle's data.
-//     displayData(length, width, area);
+    cout << setprecision(2) << fixed << "The items retail price is $" << calcRetail(wholesaleCost, markUp);
 
 //****************************************************************************************************
-    // cout << "3.\n";
+    cout << "2.\n";
 
-    // findHighest(getSales("Northeast"), getSales("Northwest"), getSales("Southeast"), getSales("Southwest"));
+    double length, width, area; 
+    int lengthInt, widthInt; 
 
-//****************************************************************************************************
-    // cout << "4.\n";
+    cout << "Enter the rectangles length and width (use a space to seperate the numbers: ";
+    cin >> lengthInt >> widthInt;
 
-    // findLowest(getNumAccidents("north"), getNumAccidents("south"), getNumAccidents("east"), getNumAccidents("west"), getNumAccidents("central"));
+   // Get the rectangle's length.
+    length = getLength(lengthInt); 
 
-//****************************************************************************************************
-    // cout << "5.\n";
+   // Get the rectangle's width.
+    width = getWidth(widthInt);
 
-    // for (int i = 1; i <= 10; i++) //assume i is in seconds
-    // {
-    //     cout << "In " << i << " seconds. The object fell " << fallingDistance(i) << " meters per second" << endl;
-    // }
+   // Get the rectangle's area.
+    area = getArea(length, width);
 
-//****************************************************************************************************
-    // cout << "6.\n";
-
-    // double mass, velocity;
-
-    // cout << "What is the mass of the object? ";
-    // cin >> mass;
-    // cout << "\nWhat is the velocity of the object? \n";
-    // cin >> velocity;
-
-    // cout << "The kinetic energy of the object is " << kineticEnergy(mass, velocity) << " meters per second.";
+   // Display the rectangle's data.
+    displayData(length, width, area);
 
 //****************************************************************************************************
-    // cout << "7.\n";
+    cout << "3.\n";
 
-    // cout << "Fahrenheit" << "\tCelsius\n";
-
-    // for (int i = 0; i <= 20; i++) //assume i is fn fahrenheit
-    // {
-    //     cout << i << "\t\t" << setprecision(2) << fixed << convertToCelsius(i) << endl;
-    // }
+    findHighest(getSales("Northeast"), getSales("Northwest"), getSales("Southeast"), getSales("Southwest"));
 
 //****************************************************************************************************
-    // cout << "8.\n";
+    cout << "4.\n";
 
-    // int toss;
+    findLowest(getNumAccidents("north"), getNumAccidents("south"), getNumAccidents("east"), getNumAccidents("west"), getNumAccidents("central"));
 
-    // cout << "How many times do you want to toss the coin? ";
-    // cin >> toss;
+//****************************************************************************************************
+    cout << "5.\n";
 
-    // for (int i = 1; i <= toss; i++)
-    // {
-    //     coinToss(i);
-    // }
+    for (int i = 1; i <= 10; i++) //assume i is in seconds
+    {
+        cout << "In " << i << " seconds. The object fell " << fallingDistance(i) << " meters per second" << endl;
+    }
+
+//****************************************************************************************************
+    cout << "6.\n";
+
+    double mass, velocity;
+
+    cout << "What is the mass of the object? ";
+    cin >> mass;
+    cout << "\nWhat is the velocity of the object? \n";
+    cin >> velocity;
+
+    cout << "The kinetic energy of the object is " << kineticEnergy(mass, velocity) << " meters per second.";
+
+//****************************************************************************************************
+    cout << "7.\n";
+
+    cout << "Fahrenheit" << "\tCelsius\n";
+
+    for (int i = 0; i <= 20; i++) //assume i is fn fahrenheit
+    {
+        cout << i << "\t\t" << setprecision(2) << fixed << convertToCelsius(i) << endl;
+    }
+
+//****************************************************************************************************
+    cout << "8.\n";
+
+    int toss;
+
+    cout << "How many times do you want to toss the coin? ";
+    cin >> toss;
+
+    for (int i = 1; i <= toss; i++)
+    {
+        coinToss(i);
+    }
     
 //****************************************************************************************************
-    // cout << "9.\n";
+    cout << "9.\n";
 
-    // int years;
-    // double futureValue, annualInterest;
+    int years;
+    double futureValue, annualInterest;
 
-    // cout << "How much money do you want in your account in the future? ";
-    // cin >> futureValue;
-    // cout << "\nWhat is the annual interest rate? ";
-    // cin >> annualInterest;
-    // cout << "\nFow how many years do you want the money to sit in your account for? ";
-    // cin >> years;
+    cout << "How much money do you want in your account in the future? ";
+    cin >> futureValue;
+    cout << "\nWhat is the annual interest rate? ";
+    cin >> annualInterest;
+    cout << "\nFow how many years do you want the money to sit in your account for? ";
+    cin >> years;
 
-    // annualInterest /= 100;
+    annualInterest /= 100;
 
-    // cout << setprecision(2) << fixed;
-    // cout << "\nYou need to deposit $" << presentValue(futureValue, annualInterest, years) << " today to have a future value of $" << futureValue;
-
-//****************************************************************************************************
-    // cout << "10.\n";
-
-    // int time;
-    // double presentValue, monthlyInterest;
-
-    // cout << "Enter your present value amount $";
-    // cin >> presentValue;
-    // cout << "\nWhat is the annual interest rate? ";
-    // cin >> monthlyInterest;
-    // cout << "\nFow how many years do you want the money to sit in your account for? ";
-    // cin >> time;
-
-    // cout << cout << setprecision(2) << fixed << calcFutureValue(presentValue, monthlyInterest, time) << " today to have a future value of $";
+    cout << setprecision(2) << fixed;
+    cout << "\nYou need to deposit $" << presentValue(futureValue, annualInterest, years) << " today to have a future value of $" << futureValue;
 
 //****************************************************************************************************
-    // cout << "11.\n";
+    cout << "10.\n";
 
-    // double score1, score2, score3, score4, score5;
+    int time;
+    double presentValue, monthlyInterest;
 
-    // //we're only getting the scores here
-    // getScore(score1);
-    // getScore(score2);
-    // getScore(score3);
-    // getScore(score4);
-    // getScore(score5);
+    cout << "Enter your present value amount $";
+    cin >> presentValue;
+    cout << "\nWhat is the annual interest rate? ";
+    cin >> monthlyInterest;
+    cout << "\nFow how many years do you want the money to sit in your account for? ";
+    cin >> time;
 
-    // //we aren't passing the void function but the scores itself
-    // calcAverage(score1, score2, score3, score4, score5);
-
-//****************************************************************************************************
-    // cout << "12\n";
-
-    // double score1, score2, score3, score4, score5;
-
-    // getJudgeData(score1);
-    // getJudgeData(score2);
-    // getJudgeData(score3);
-    // getJudgeData(score4);
-    // getJudgeData(score5);
-
-    // calcScore(score1, score2, score3, score4, score5);
+    cout << cout << setprecision(2) << fixed << calcFutureValue(presentValue, monthlyInterest, time) << " today to have a future value of $";
 
 //****************************************************************************************************
-    //cout << "13\n";
+    cout << "11.\n";
+
+    double score1, score2, score3, score4, score5;
+
+    //we're only getting the scores here
+    getScore(score1);
+    getScore(score2);
+    getScore(score3);
+    getScore(score4);
+    getScore(score5);
+
+    //we aren't passing the void function but the scores itself
+    calcAverage(score1, score2, score3, score4, score5);
+
+//****************************************************************************************************
+    cout << "12\n";
+
+    double score1, score2, score3, score4, score5;
+
+    getJudgeData(score1);
+    getJudgeData(score2);
+    getJudgeData(score3);
+    getJudgeData(score4);
+    getJudgeData(score5);
+
+    calcScore(score1, score2, score3, score4, score5);
+
+//****************************************************************************************************
+    cout << "13\n";
     
-    // int totalDaysMissed, employeesAmt;
+    int totalDaysMissed, employeesAmt;
 
-    // employeesAmt = getEmployeeNumber(); //store the returning int in employeesAmt
+    employeesAmt = getEmployeeNumber(); //store the returning int in employeesAmt
 
-    // totalDaysMissed = getDaysMissed(employeesAmt); //pass employees amount, and return int in totaldays missed
+    totalDaysMissed = getDaysMissed(employeesAmt); //pass employees amount, and return int in totaldays missed
 
-    // cout << "The average number of days missed was " << calcAvgDaysMissed(totalDaysMissed, employeesAmt) << " days\n";
-
-//****************************************************************************************************
-    // cout << "14.\n";
-
-    // int spoolsOrderAmt, spoolsStockAmt, specialChargeAmt, amounts;
-
-    // amounts = getOrderStatus();
-    // spoolsStockAmt = getOrderStatus();
-    // specialChargeAmt = getOrderStatus();
-
-    //cout << amounts;
-
-    // calcOrder(getOrderStatus());
+    cout << "The average number of days missed was " << calcAvgDaysMissed(totalDaysMissed, employeesAmt) << " days\n";
 
 //****************************************************************************************************
-    // cout << "15.\n";
+    cout << "14.\n";
 
-    // string answer;
-    // int days;
-    // double rate, charges, serviceCharge, outCharges, outServiceCharge;
+    int spoolsOrderAmt, spoolsStockAmt, specialChargeAmt, amounts;
 
-    // cout << "Were you admitted as an inpatient or outpatient? ";
-    // cin >> answer;
+    amounts = getOrderStatus();
+    spoolsStockAmt = getOrderStatus();
+    specialChargeAmt = getOrderStatus();
 
-    // if (answer == "inpatient")
-    // {
-    //     do
-    //     {
-    //         cout << "How many days did you spend in the hospital? ";
-    //         cin >> days;
-    //         cout << "\nWhat was the daily rate? ";
-    //         cin >> rate;
-    //         cout << "\nWhat was the hospital medication charges? ";
-    //         cin >> charges;
-    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
-    //         cin >> serviceCharge;
-    //     }
-    //     while (days <= 0 || rate <= 0.0 || charges <= 0.0 || serviceCharge <= 0.0);
+    cout << amounts;
 
-    //     cout << "Your hospital bill is $" << setprecision(2) << fixed << calcHospitalCharges(days, rate, charges, serviceCharge);
-    // }
-    // else if (answer == "outpatient")
-    // {
-    //     do
-    //     {
-    //         cout << "\nWhat was the hospital medication charges? ";
-    //         cin >> outCharges;
-    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
-    //         cin >> outServiceCharge;
-    //     }
-    //     while (outCharges <= 0.0 || outServiceCharge <= 0.0);
-
-    //     cout << "Your hospital bill is $" << setprecision(2) << fixed << calcHospitalCharges(outCharges, outServiceCharge);
-    // }
+    calcOrder(getOrderStatus());
 
 //****************************************************************************************************
-    // cout << "16.\n";
+    cout << "15.\n";
 
-    // int population, birthRate, deathRate, years;
+    string answer;
+    int days;
+    double rate, charges, serviceCharge, outCharges, outServiceCharge;
 
-    // do
-    // {
-    //     cout << "What is the starting size of the population? ";
-    //     cin >> population;
-    //     cout << "\nWhat is the annual birth rate? ";
-    //     cin >> birthRate;
-    //     cout << "\nWHat is the annual death rate? ";
-    //     cin >> deathRate;
-    //     cout << "\nHow many years into the future do you want to see the population size? ";
-    //     cin >> years;
+    cout << "Were you admitted as an inpatient or outpatient? ";
+    cin >> answer;
 
-    // } while (population < 2 || birthRate < 0 || deathRate < 0 || years < 1);
+    if (answer == "inpatient")
+    {
+        do
+        {
+            cout << "How many days did you spend in the hospital? ";
+            cin >> days;
+            cout << "\nWhat was the daily rate? ";
+            cin >> rate;
+            cout << "\nWhat was the hospital medication charges? ";
+            cin >> charges;
+            cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+            cin >> serviceCharge;
+        }
+        while (days <= 0 || rate <= 0.0 || charges <= 0.0 || serviceCharge <= 0.0);
+
+        cout << "Your hospital bill is $" << setprecision(2) << fixed << calcHospitalCharges(days, rate, charges, serviceCharge);
+    }
+    else if (answer == "outpatient")
+    {
+        do
+        {
+            cout << "\nWhat was the hospital medication charges? ";
+            cin >> outCharges;
+            cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+            cin >> outServiceCharge;
+        }
+        while (outCharges <= 0.0 || outServiceCharge <= 0.0);
+
+        cout << "Your hospital bill is $" << setprecision(2) << fixed << calcHospitalCharges(outCharges, outServiceCharge);
+    }
+
+//****************************************************************************************************
+    cout << "16.\n";
+
+    int population, birthRate, deathRate, years;
+
+    do
+    {
+        cout << "What is the starting size of the population? ";
+        cin >> population;
+        cout << "\nWhat is the annual birth rate? ";
+        cin >> birthRate;
+        cout << "\nWHat is the annual death rate? ";
+        cin >> deathRate;
+        cout << "\nHow many years into the future do you want to see the population size? ";
+        cin >> years;
+
+    } while (population < 2 || birthRate < 0 || deathRate < 0 || years < 1);
     
-    // getPopulationSize(population, birthRate, deathRate, years);
+    getPopulationSize(population, birthRate, deathRate, years);
 
 //****************************************************************************************************
-    // cout << "17.\n";
+    cout << "17.\n";
 
-    // int population, birthRate, deathRate, numYears, moveIn, moveOut;
+    int population, birthRate, deathRate, numYears, moveIn, moveOut;
 
-    // do
-    // {
-    //     cout << "What is the starting size of the population? ";
-    //     cin >> population;
-    //     cout << "\nWhat is the annual birth rate? ";
-    //     cin >> birthRate;
-    //     cout << "\nWhat is the annual death rate? ";
-    //     cin >> deathRate;
-    //     cout << "\nHow many people typically move into this area per year? ";
-    //     cin >> moveIn;
-    //     cout << "\nHow many people typically leave this area per year? ";
-    //     cin >> moveOut;
-    //     cout << "\nHow many years into the future do you want to see the population size? ";
-    //     cin >> numYears;
+    do
+    {
+        cout << "What is the starting size of the population? ";
+        cin >> population;
+        cout << "\nWhat is the annual birth rate? ";
+        cin >> birthRate;
+        cout << "\nWhat is the annual death rate? ";
+        cin >> deathRate;
+        cout << "\nHow many people typically move into this area per year? ";
+        cin >> moveIn;
+        cout << "\nHow many people typically leave this area per year? ";
+        cin >> moveOut;
+        cout << "\nHow many years into the future do you want to see the population size? ";
+        cin >> numYears;
 
-    // } while (population < 2 || birthRate < 0 || deathRate < 0 || numYears < 1 || moveIn < 0 || moveOut < 0);
+    } while (population < 2 || birthRate < 0 || deathRate < 0 || numYears < 1 || moveIn < 0 || moveOut < 0);
     
-    // getPopulationSize(population, birthRate, deathRate, numYears, moveIn, moveOut);
+    getPopulationSize(population, birthRate, deathRate, numYears, moveIn, moveOut);
 
 //****************************************************************************************************
-    // cout << "18.\n";
+    cout << "18.\n";
 
-    // int numRooms;
-    // double paintPrice, squareFoot;
+    int numRooms;
+    double paintPrice, squareFoot;
 
-    // numRooms = getRooms();
+    numRooms = getRooms();
 
-    // squareFoot = getSquareFeet(numRooms);
+    squareFoot = getSquareFeet(numRooms);
 
-    // paintPrice = getPaintPrice();
+    paintPrice = getPaintPrice();
 
-    // calcJobPrice(numRooms, squareFoot, paintPrice);
+    calcJobPrice(numRooms, squareFoot, paintPrice);
 
 //****************************************************************************************************
-    // cout << "19.\n";
+    cout << "19.\n";
     
-    // string answer;
-    // int days;
-    // double rate, charges, serviceCharge, outCharges, outServiceCharge;
-    // ofstream outputFile;
+    string answer;
+    int days;
+    double rate, charges, serviceCharge, outCharges, outServiceCharge;
+    ofstream outputFile;
 
-    // cout << "Were you admitted as an inpatient or outpatient? ";
-    // cin >> answer;
+    cout << "Were you admitted as an inpatient or outpatient? ";
+    cin >> answer;
 
-    // if (answer == "inpatient")
-    // {
-    //     do
-    //     {
-    //         cout << "How many days did you spend in the hospital? ";
-    //         cin >> days;
-    //         cout << "\nWhat was the daily rate? ";
-    //         cin >> rate;
-    //         cout << "\nWhat was the hospital medication charges? ";
-    //         cin >> charges;
-    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
-    //         cin >> serviceCharge;
-    //     }
-    //     while (days <= 0 || rate <= 0.0 || charges <= 0.0 || serviceCharge <= 0.0);
+    if (answer == "inpatient")
+    {
+        do
+        {
+            cout << "How many days did you spend in the hospital? ";
+            cin >> days;
+            cout << "\nWhat was the daily rate? ";
+            cin >> rate;
+            cout << "\nWhat was the hospital medication charges? ";
+            cin >> charges;
+            cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+            cin >> serviceCharge;
+        }
+        while (days <= 0 || rate <= 0.0 || charges <= 0.0 || serviceCharge <= 0.0);
 
-    //     outputFile.open("Inpatient.txt");
+        outputFile.open("Inpatient.txt");
 
-    //     if (outputFile)
-    //     {
-    //         outputFile << "Your hospital bill is $" << setprecision(2) << fixed << calcsHospitalCharges(days, rate, charges, serviceCharge);
-    //         cout << "Data has been saved to a file.\n";
-    //     }
-    //     else
-    //     {
-    //         cout << "Data has not been saved to a file.\n";
-    //     }
+        if (outputFile)
+        {
+            outputFile << "Your hospital bill is $" << setprecision(2) << fixed << calcsHospitalCharges(days, rate, charges, serviceCharge);
+            cout << "Data has been saved to a file.\n";
+        }
+        else
+        {
+            cout << "Data has not been saved to a file.\n";
+        }
 
-    //     outputFile.close();
-    // }
-    // else if (answer == "outpatient")
-    // {
-    //     do
-    //     {
-    //         cout << "\nWhat was the hospital medication charges? ";
-    //         cin >> outCharges;
-    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
-    //         cin >> outServiceCharge;
-    //     }
-    //     while (outCharges <= 0.0 || outServiceCharge <= 0.0);
+        outputFile.close();
+    }
+    else if (answer == "outpatient")
+    {
+        do
+        {
+            cout << "\nWhat was the hospital medication charges? ";
+            cin >> outCharges;
+            cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+            cin >> outServiceCharge;
+        }
+        while (outCharges <= 0.0 || outServiceCharge <= 0.0);
 
-    //     outputFile.open("Outpatient.txt");
+        outputFile.open("Outpatient.txt");
 
-    //     if (outputFile)
-    //     {
-    //         outputFile << "Your hospital bill is $" << setprecision(2) << fixed << calcsHospitalCharges(outCharges, outServiceCharge);
-    //         cout << "Data has been saved to a file.\n";
-    //     }
-    //     else
-    //     {
-    //         cout << "Data has not been saved to a file.\n";
-    //     }
+        if (outputFile)
+        {
+            outputFile << "Your hospital bill is $" << setprecision(2) << fixed << calcsHospitalCharges(outCharges, outServiceCharge);
+            cout << "Data has been saved to a file.\n";
+        }
+        else
+        {
+            cout << "Data has not been saved to a file.\n";
+        }
 
-    //     outputFile.close();
-    // }
-
-//****************************************************************************************************
-    // cout << "20.\n";
-
-    // int numShares;
-    // double sharePrice, purchaseCommission, salePrice, saleCommission;
-
-    // cout << "How many shares did you purchase? ";
-    // cin >> numShares;
-    // cout << "\nHow much was each share? $";
-    // cin >> sharePrice;
-    // cout << "\nHow much was the purchase commision paid? $";
-    // cin >> purchaseCommission;
-    // cout << "\nHow much was the sale price per share? $";
-    // cin >> salePrice;
-    // cout << "\nHow much was the sale comission paid? $";
-    // cin >> saleCommission;
-
-    // if (calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) > 0)
-    // {
-    //     cout << setprecision(2) << fixed;
-    //     cout << "You made a profit of $" << calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) << endl;
-    // }
-    // else
-    // {
-    //     cout << setprecision(2) << fixed;
-    //     cout << "You had a loss of $" << calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) << endl;
-    // }
+        outputFile.close();
+    }
 
 //****************************************************************************************************
-    // cout << "21.\n";
+    cout << "20.\n";
 
-    // int numShares, stocks;
-    // double sharePrice, purchaseCommission, salePrice, saleCommission, totalBalance = 0.0; 
+    int numShares;
+    double sharePrice, purchaseCommission, salePrice, saleCommission;
 
-    // cout << "How many stocks did you purchase? ";
-    // cin >> stocks;
+    cout << "How many shares did you purchase? ";
+    cin >> numShares;
+    cout << "\nHow much was each share? $";
+    cin >> sharePrice;
+    cout << "\nHow much was the purchase commision paid? $";
+    cin >> purchaseCommission;
+    cout << "\nHow much was the sale price per share? $";
+    cin >> salePrice;
+    cout << "\nHow much was the sale comission paid? $";
+    cin >> saleCommission;
 
-    // for (int i = 1; i <= stocks; i++)
-    // {
-    //     cout << "\nHow many shares did you purchase for stock " << i << endl;
-    //     cin >> numShares;
-    //     cout << "\nHow much was each share for stock " << i << endl;
-    //     cin >> sharePrice;
-    //     cout << "\nHow much was the purchase commision paid for stock " << i << endl;
-    //     cin >> purchaseCommission;
-    //     cout << "\nHow much was the sale price per share for stock " << i << endl;
-    //     cin >> salePrice;
-    //     cout << "\nHow much was the sale comission paid for stock " << i << endl;
-    //     cin >> saleCommission;
+    if (calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) > 0)
+    {
+        cout << setprecision(2) << fixed;
+        cout << "You made a profit of $" << calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) << endl;
+    }
+    else
+    {
+        cout << setprecision(2) << fixed;
+        cout << "You had a loss of $" << calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) << endl;
+    }
 
-    //     totalBalance += calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission);
-    // }
+//****************************************************************************************************
+    cout << "21.\n";
 
-    // if (totalBalance > 0)
-    // {
-    //     cout << setprecision(2) << fixed;
-    //     cout << "You made a profit of $" << totalBalance << endl;
-    // }
-    // else
-    // {
-    //     cout << setprecision(2) << fixed;
-    //     cout << "You had a loss of $" << totalBalance << endl;
-    // }
+    int numShares, stocks;
+    double sharePrice, purchaseCommission, salePrice, saleCommission, totalBalance = 0.0; 
+
+    cout << "How many stocks did you purchase? ";
+    cin >> stocks;
+
+    for (int i = 1; i <= stocks; i++)
+    {
+        cout << "\nHow many shares did you purchase for stock " << i << endl;
+        cin >> numShares;
+        cout << "\nHow much was each share for stock " << i << endl;
+        cin >> sharePrice;
+        cout << "\nHow much was the purchase commision paid for stock " << i << endl;
+        cin >> purchaseCommission;
+        cout << "\nHow much was the sale price per share for stock " << i << endl;
+        cin >> salePrice;
+        cout << "\nHow much was the sale comission paid for stock " << i << endl;
+        cin >> saleCommission;
+
+        totalBalance += calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission);
+    }
+
+    if (totalBalance > 0)
+    {
+        cout << setprecision(2) << fixed;
+        cout << "You made a profit of $" << totalBalance << endl;
+    }
+    else
+    {
+        cout << setprecision(2) << fixed;
+        cout << "You had a loss of $" << totalBalance << endl;
+    }
 
 //****************************************************************************************************
     cout << "22.\n";
 
     int number;
+    bool status;
 
     cout << "Enter a number to determine if it is a prime number: ";
     cin >> number;
 
-    cout << number << " is a prime number " << isPrime(number) << endl;
+    status = isPrime(number);
 
+    if (status == 1)
+    {
+        cout << number << " is a prime number.\n";
+    }
+    else
+    {
+        cout << number << " is not a prime number.\n";
+    }
+
+//****************************************************************************************************
+    cout << "23.\n";
+
+    printAllPrime();
+
+//****************************************************************************************************
+    cout << "24.\n";
+
+    int computerChoice, userChoice;
+
+    displayGameIntro();
+
+    computerChoice = generateRandomNumber();
+
+    userChoice = getPlayersMove();
+
+    displayComputersChoice(computerChoice);
+
+    decideWinner(computerChoice, userChoice);
 
     return 0;
 }
-
-
 
 
 
@@ -1084,18 +1120,126 @@ double calcStockProfit(int NS, double PP, double PC, double SP, double SC){
 // 22.
 bool isPrime (int num){
     bool status;
+    int isPrime = 1;
 
-    for (int i = 1; i <= num; i++)
+    if (num <= 1)
     {
-        if (num % i == num)
+        int isPrime = 0;
+    }
+    
+    for (int i = 2; i <= num/2; i++)
+    {
+        if (num % i == 0)
         {
-            status = true;
-        }
-        else 
-        {
-            status = false;
+            isPrime = 0;
+            break;
         }
     }
 
+    if (isPrime == 1)
+    {
+        status = true;
+    } 
+    else
+    {
+        status = false;
+    }
+
     return status;
+}
+
+// 23.
+void printAllPrime(){
+    bool status;
+    int isPrime = 1, num;
+
+    if (num <= 1)
+    {
+        int isPrime = 0;
+    }
+    
+    for (int i = 1; i <= 100; i++)
+    {
+        cout << "All prime numbers from 1 to 100: " << num;
+
+        for (int j = 2; j <= num/2; j++)
+        {
+            if (num % j == 0)
+            {
+                isPrime = 0;
+                break;
+            }
+            else 
+            {
+                isPrime = 1;
+            }
+        }
+    }
+}
+
+// 24.
+void displayGameIntro(){
+    cout << "Welcome to rock, paper, scissors!\n";
+    cout << "The objective is to beat the computer in this game.\n";
+}
+
+int generateRandomNumber(){
+    int number;
+    int min = 1, max = 3;
+
+    srand(time(NULL));
+    number = (rand()%(max - min + 1) + min);
+
+    return number;
+}
+
+int getPlayersMove(){
+    int decision; 
+
+    cout << "Below will be the instructions for the game.\n";
+    cout << "Enter your selection. rock = 1, scissors = 2, and paper = 3: ";
+    cin >> decision;
+
+    return decision;
+}
+
+void displayComputersChoice(int computerSelection){
+    cout << "The computer chose " << computerSelection << endl;
+}
+
+void decideWinner(int computerMove, int userMove){
+    while (computerMove == 1 && userMove == 1 || computerMove == 2 && userMove == 2 || computerMove == 3 && userMove == 3)
+    {
+        cout << "Y'all have tied, please enter a new selection\n";
+        cin >> userMove;
+
+        computerMove = generateRandomNumber();
+
+        displayComputersChoice(computerMove);
+    }
+
+    if (computerMove == 1 && userMove == 2)
+    {
+        cout << "You won!";
+    }
+    else if (computerMove == 1 && userMove == 3)
+    {
+        cout << "Sorry, the computer won!";
+    }
+    else if (computerMove == 2 && userMove == 1)
+    {
+        cout << "Sorry, the computer won!";
+    }
+    else if (computerMove == 2 && userMove == 3)
+    {
+        cout << "You won!";
+    }
+    else if (computerMove == 3 && userMove == 1)
+    {
+        cout << "You won!";
+    }
+    else if (computerMove == 3 && userMove == 2)
+    {
+        cout << "Sorry, the computer won!";
+    }
 }
