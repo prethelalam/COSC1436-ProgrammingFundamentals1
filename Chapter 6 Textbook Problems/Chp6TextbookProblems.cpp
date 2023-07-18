@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string> 
 #include <cmath>
+#include <fstream>
 using namespace std;
 
 //function prototypes
@@ -76,6 +77,16 @@ int getRooms();
 double getSquareFeet(int);
 double getPaintPrice();
 void calcJobPrice(int, double, double);
+
+// 19.
+double calcsHospitalCharges(int, double, double, double);
+double calcsHospitalCharges(double, double);
+
+// 20. and 21.
+double calcStockProfit(int, double, double, double, double);
+
+// 22.
+bool isPrime(int);      //come back too
 
 
 int main(){
@@ -350,19 +361,159 @@ int main(){
     // getPopulationSize(population, birthRate, deathRate, numYears, moveIn, moveOut);
 
 //****************************************************************************************************
-    cout << "18.\n";
+    // cout << "18.\n";
 
-    int numRooms;
-    double paintPrice, squareFoot;
+    // int numRooms;
+    // double paintPrice, squareFoot;
 
-    numRooms = getRooms();
+    // numRooms = getRooms();
 
-    squareFoot = getSquareFeet(numRooms);
+    // squareFoot = getSquareFeet(numRooms);
 
-    paintPrice = getPaintPrice();
+    // paintPrice = getPaintPrice();
 
-    calcJobPrice(numRooms, squareFoot, paintPrice);
+    // calcJobPrice(numRooms, squareFoot, paintPrice);
+
+//****************************************************************************************************
+    // cout << "19.\n";
     
+    // string answer;
+    // int days;
+    // double rate, charges, serviceCharge, outCharges, outServiceCharge;
+    // ofstream outputFile;
+
+    // cout << "Were you admitted as an inpatient or outpatient? ";
+    // cin >> answer;
+
+    // if (answer == "inpatient")
+    // {
+    //     do
+    //     {
+    //         cout << "How many days did you spend in the hospital? ";
+    //         cin >> days;
+    //         cout << "\nWhat was the daily rate? ";
+    //         cin >> rate;
+    //         cout << "\nWhat was the hospital medication charges? ";
+    //         cin >> charges;
+    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+    //         cin >> serviceCharge;
+    //     }
+    //     while (days <= 0 || rate <= 0.0 || charges <= 0.0 || serviceCharge <= 0.0);
+
+    //     outputFile.open("Inpatient.txt");
+
+    //     if (outputFile)
+    //     {
+    //         outputFile << "Your hospital bill is $" << setprecision(2) << fixed << calcsHospitalCharges(days, rate, charges, serviceCharge);
+    //         cout << "Data has been saved to a file.\n";
+    //     }
+    //     else
+    //     {
+    //         cout << "Data has not been saved to a file.\n";
+    //     }
+
+    //     outputFile.close();
+    // }
+    // else if (answer == "outpatient")
+    // {
+    //     do
+    //     {
+    //         cout << "\nWhat was the hospital medication charges? ";
+    //         cin >> outCharges;
+    //         cout << "\nWhat were the charges for the hospital services (lab tests, etc..) ";
+    //         cin >> outServiceCharge;
+    //     }
+    //     while (outCharges <= 0.0 || outServiceCharge <= 0.0);
+
+    //     outputFile.open("Outpatient.txt");
+
+    //     if (outputFile)
+    //     {
+    //         outputFile << "Your hospital bill is $" << setprecision(2) << fixed << calcsHospitalCharges(outCharges, outServiceCharge);
+    //         cout << "Data has been saved to a file.\n";
+    //     }
+    //     else
+    //     {
+    //         cout << "Data has not been saved to a file.\n";
+    //     }
+
+    //     outputFile.close();
+    // }
+
+//****************************************************************************************************
+    // cout << "20.\n";
+
+    // int numShares;
+    // double sharePrice, purchaseCommission, salePrice, saleCommission;
+
+    // cout << "How many shares did you purchase? ";
+    // cin >> numShares;
+    // cout << "\nHow much was each share? $";
+    // cin >> sharePrice;
+    // cout << "\nHow much was the purchase commision paid? $";
+    // cin >> purchaseCommission;
+    // cout << "\nHow much was the sale price per share? $";
+    // cin >> salePrice;
+    // cout << "\nHow much was the sale comission paid? $";
+    // cin >> saleCommission;
+
+    // if (calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) > 0)
+    // {
+    //     cout << setprecision(2) << fixed;
+    //     cout << "You made a profit of $" << calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) << endl;
+    // }
+    // else
+    // {
+    //     cout << setprecision(2) << fixed;
+    //     cout << "You had a loss of $" << calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission) << endl;
+    // }
+
+//****************************************************************************************************
+    // cout << "21.\n";
+
+    // int numShares, stocks;
+    // double sharePrice, purchaseCommission, salePrice, saleCommission, totalBalance = 0.0; 
+
+    // cout << "How many stocks did you purchase? ";
+    // cin >> stocks;
+
+    // for (int i = 1; i <= stocks; i++)
+    // {
+    //     cout << "\nHow many shares did you purchase for stock " << i << endl;
+    //     cin >> numShares;
+    //     cout << "\nHow much was each share for stock " << i << endl;
+    //     cin >> sharePrice;
+    //     cout << "\nHow much was the purchase commision paid for stock " << i << endl;
+    //     cin >> purchaseCommission;
+    //     cout << "\nHow much was the sale price per share for stock " << i << endl;
+    //     cin >> salePrice;
+    //     cout << "\nHow much was the sale comission paid for stock " << i << endl;
+    //     cin >> saleCommission;
+
+    //     totalBalance += calcStockProfit(numShares, sharePrice, purchaseCommission, salePrice, saleCommission);
+    // }
+
+    // if (totalBalance > 0)
+    // {
+    //     cout << setprecision(2) << fixed;
+    //     cout << "You made a profit of $" << totalBalance << endl;
+    // }
+    // else
+    // {
+    //     cout << setprecision(2) << fixed;
+    //     cout << "You had a loss of $" << totalBalance << endl;
+    // }
+
+//****************************************************************************************************
+    cout << "22.\n";
+
+    int number;
+
+    cout << "Enter a number to determine if it is a prime number: ";
+    cin >> number;
+
+    cout << number << " is a prime number " << isPrime(number) << endl;
+
 
     return 0;
 }
@@ -907,4 +1058,44 @@ void calcJobPrice(int roomAmt, double squareFeet, double paintPriceGallon){
     cout << "The cost of the paint is $" << costOfPaint << endl;
     cout << "The labor charges is $" << laborCharges << endl;
     cout << "The total cost of the paint job is $" << totalCost << endl;
+}
+
+// 19.
+double calcsHospitalCharges(int hospDays, double dailyRate, double medCharges, double hospCharges){
+    double totalCharges = (hospDays * dailyRate) + medCharges + hospCharges;
+
+    return totalCharges;
+}
+
+double calcsHospitalCharges(double outPtCharges, double outPtservice){
+    double totalCharges = outPtCharges + outPtservice;
+
+    return totalCharges;
+}
+
+// 20. and 21.
+double calcStockProfit(int NS, double PP, double PC, double SP, double SC){
+    double endingBalance = ((NS * SP) - SC) - ((NS * PP) + PC);
+
+    return endingBalance;
+    
+}
+
+// 22.
+bool isPrime (int num){
+    bool status;
+
+    for (int i = 1; i <= num; i++)
+    {
+        if (num % i == num)
+        {
+            status = true;
+        }
+        else 
+        {
+            status = false;
+        }
+    }
+
+    return status;
 }
