@@ -54,6 +54,25 @@ int getArrayLowest(int[], int);
 // 8.
 void determineMagicSquare(int[ROW_LO][COL_LO]);
 
+// 9.
+void getHours(int[], int[], double[], int);
+void calcWages(int[], double[], double[], int);
+void displayIDWages(int[], double[], int);
+
+// 10.
+void getStudentAns(char[], int);
+void getResults(char[], char[], int);
+
+// 11.
+void storeStudentAnswers(char[], int);
+void storeCorrectAnswers(char[], int);
+void compareResults(char[], char[], int);
+
+// 12.              //come back too
+void getStudentNames(string[], int);
+void getTestScores(string[], double[], int, int);
+
+
 // main
 int main(){
     // cout << "1.\n";
@@ -191,17 +210,74 @@ int main(){
     // cout << "The lowest number in the array is " << numbers[lowest] << endl;
 
 //***************************************************************************************************
-    cout << "8.\n";
+    // cout << "8.\n";
 
-    int magicSquare[ROW_LO][COL_LO] = {{4, 9, 2},
-                                        {3, 5, 7},
-                                        {8, 1, 6}};
+    // int magicSquare[ROW_LO][COL_LO] = {{4, 9, 2},
+    //                                     {3, 5, 7},
+    //                                     {8, 1, 6}};
 
-    determineMagicSquare(magicSquare);
+    // determineMagicSquare(magicSquare);
 
+//***************************************************************************************************
+    // cout << "9.\n";
+
+    // const int ARRAY_SIZE = 7;
+    // int empID[ARRAY_SIZE] = {5658845, 4520125, 7895122, 8777541, 8451277, 1302850, 7580489};
+    // int hours[ARRAY_SIZE];
+    // double payRate[ARRAY_SIZE];
+    // double wages[ARRAY_SIZE];
+
+    // getHours(empID, hours, payRate, ARRAY_SIZE);
+    // calcWages(hours, payRate, wages, ARRAY_SIZE);
+    // displayIDWages(empID, wages, ARRAY_SIZE);
+
+//***************************************************************************************************
+    // cout << "10.\n";
+
+    // const int ARRAY_SIZE = 20;
+    // char correctAns[ARRAY_SIZE] = {'a', 'd', 'b', 'b', 'c', 'b', 'a', 'b', 'c', 'd', 'a', 'c', 'd', 'b', 'd', 'c', 'c', 'a', 'd', 'b'};
+    // char studentsAns[ARRAY_SIZE];
+
+    // getStudentAns(studentsAns, ARRAY_SIZE);
+    // getResults(studentsAns, correctAns, ARRAY_SIZE);
+
+//***************************************************************************************************
+    // cout << "11.\n";
+
+    // const int ARRAY_SIZE = 20;
+    // char studentAns[ARRAY_SIZE];
+    // char correctAns[ARRAY_SIZE];
+
+    // storeStudentAnswers(studentAns, ARRAY_SIZE);
+    // storeCorrectAnswers(correctAns, ARRAY_SIZE);
+    // compareResults(studentAns, correctAns, ARRAY_SIZE);
+
+//***************************************************************************************************
+    cout << "12.\n";
+
+    const int ARRAY_SIZE = 5;
+    const int TEST_ARRAY_SIZE = 4;
+
+    string studentNames[ARRAY_SIZE];
+    double testScores[TEST_ARRAY_SIZE];
+    //char studentGrade[ARRAY_SIZE];
+
+    //pass studentNames, array size, test scores, and test array size
+    //have a nested for loop
+    
+
+    getStudentNames(studentNames, ARRAY_SIZE);
+    getTestScores(studentNames, testScores, ARRAY_SIZE, TEST_ARRAY_SIZE);
+    
+    //average = getTestScores(student1Score, TEST_ARRAY_SIZE);
+
+    
 
     return 0;
 }
+
+
+
 
 
 // functions
@@ -656,3 +732,173 @@ void determineMagicSquare(int array[ROW_LO][COL_LO]){
         cout << "This array is not a Lo Shu Magic Square" << endl;
     }
 }
+
+// 9.
+void getHours(int ID[], int hour[], double pay[], int size){
+    for (int i = 0; i < size; i++)
+    {
+        do
+        {
+            cout << "For employee " << ID[i] << " enter the number of hours worked and the pay rate: ";
+            cin >> hour[i] >> pay[i];
+        }
+        while (hour[i] < 0 || pay[i] < 15.00);
+        
+    }
+}
+
+void calcWages(int hours[], double pay[], double wage[], int size){
+    for (int i = 0; i < size; i++)
+    {
+        wage[i] = hours[i] * pay[i];
+    }
+}
+
+void displayIDWages(int num[], double wages[], int size){
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Employee #" << num[i] << " gross wage is $" << wages[i] << endl;
+    }
+}
+
+// 10. 
+void getStudentAns(char studentResponse[], int size){
+    cout << "Select either a, b, c, or d for an answer choice.\n";
+
+    for (int i = 0; i < size; i++)
+    {
+        do
+        {
+        cout << i + 1 << ". ";
+        cin >> studentResponse[i];
+        }
+        while (studentResponse[i] != 'a' && studentResponse[i] != 'b' && studentResponse[i] != 'c' && studentResponse[i] != 'd');
+    }
+}
+void getResults(char studentAnswer[], char correctAnswer[], int size){
+    int counter = 0, count = 0;
+
+    for(int i = 0; i < size; i++)
+    {
+        if(studentAnswer[i] != correctAnswer[i])
+        {
+            cout << i + 1 << " is incorrect." << endl;
+            count++;
+        }
+    }
+    for (int i = 0; i < size; i++)
+    {
+        if(studentAnswer[i] == correctAnswer[i]) 
+        {
+            counter++;
+        }
+    }
+    cout << "You got " << count << " answers incorrect.\n";
+    cout << "You got " << counter << " answers correct.\n";
+}
+
+// 11.
+void storeStudentAnswers(char answer[], int size){
+    ifstream inputFile;
+
+    inputFile.open("StudentAnswers.txt");
+
+    if(inputFile)
+    {
+        cout << "\nFile is open. Reading the students answers now.\n";
+    }
+    else
+    {
+        cout << "File did not open.";
+    }
+    for (int i = 0; i < size; i++)
+    {
+        inputFile >> answer[i];
+    }
+
+    inputFile.close();
+}
+void storeCorrectAnswers(char correct[], int size){
+    ifstream inputFile;
+
+    inputFile.open("CorrectAnswers.txt");
+
+    if(inputFile)
+    {
+        cout << "\nFile is open. Reading the correct answers now.\n";
+    }
+    else
+    {
+        cout << "File did not open.";
+    }
+    for (int i = 0; i < size; i++)
+    {
+        inputFile >> correct[i];
+    }
+
+    inputFile.close();
+}
+void compareResults(char student[], char correct[], int size){
+    int count = 0, counter = 0;
+
+    for(int i = 0; i < size; i++)
+    {
+        if(student[i] != correct[i])
+        {
+            cout << i + 1 << ". " << student[i] << " is incorrect. The correct answer is " << correct[i] << endl; 
+            count++;
+        }
+    }
+    for (int i = 0; i < size; i++)
+    {
+        if(student[i] == correct[i]) 
+        {
+            counter++;
+        }
+    }
+    cout << "You got " << count << " answers incorrect.\n";
+
+    if ((counter / 20.00) * 100 >= 70)
+    {
+        cout << "You passed the exam by getting " << (counter / 20.00) * 100 << "% correct.";
+    }
+    else
+    {
+        cout << "You failed the exam by getting " << (counter / 20.00) * 100 << "% correct.";
+    }
+}
+
+// 12.
+void getStudentNames(string name[], int size){
+    for(int i = 0; i < size; i++)
+    {
+        cout << "Enter student " << i + 1 << " name: ";
+        cin >> name[i];
+    }
+}
+void getTestScores(string names[], double scores[], int nameSize, int scoreSize){
+    double total = 0;
+    double average;
+
+    for(int i = 0; i < nameSize; i++)
+    {
+        cout << "Enter " << names[i] << "'s test score for ";
+
+        for(int i = 0; i < scoreSize; i++)
+        {
+            cout << "test " << i + 1 << ": ";
+            cin >> scores[i]; 
+        }
+
+        total += scores[i];
+        average = total / 4.0;
+
+        scores[i] = average;
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        cout << scores[i] << endl;
+    }
+}
+
