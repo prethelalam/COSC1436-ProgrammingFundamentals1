@@ -1,6 +1,8 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include <fstream>
+
 
 using namespace std;
 
@@ -71,6 +73,24 @@ void compareResults(char[], char[], int);
 // 12.              //come back too
 void getStudentNames(string[], int);
 void getTestScores(string[], double[], int, int);
+
+// 13.      //come back too, an extension of 12
+
+// 14. 
+void generateNumbers(int[], int);
+void getUserNumbers(int[], int);
+void displayResults(int[], int[], int);
+void compareResults(int[], int[], int);
+
+// 15.
+bool testPin(vector<int>, vector<int>);
+
+
+// 16.
+void storeTeam(string[], int);
+void storeChampions(string[], int);
+string userSelection(string[], int);
+int getChampionships(string, string[], int); //this function is not working properly
 
 
 // main
@@ -253,25 +273,65 @@ int main(){
     // compareResults(studentAns, correctAns, ARRAY_SIZE);
 
 //***************************************************************************************************
-    cout << "12.\n";
+    //cout << "12.\n";
 
-    const int ARRAY_SIZE = 5;
-    const int TEST_ARRAY_SIZE = 4;
+    // const int ARRAY_SIZE = 5;
+    // const int TEST_ARRAY_SIZE = 4;
 
-    string studentNames[ARRAY_SIZE];
-    double testScores[TEST_ARRAY_SIZE];
-    //char studentGrade[ARRAY_SIZE];
+    // string studentNames[ARRAY_SIZE];
+    // double testScores[TEST_ARRAY_SIZE];
+    // char studentGrade[ARRAY_SIZE];
 
-    //pass studentNames, array size, test scores, and test array size
-    //have a nested for loop
+    // //pass studentNames, array size, test scores, and test array size
+    // //have a nested for loop
     
 
-    getStudentNames(studentNames, ARRAY_SIZE);
-    getTestScores(studentNames, testScores, ARRAY_SIZE, TEST_ARRAY_SIZE);
+    // getStudentNames(studentNames, ARRAY_SIZE);
+    // getTestScores(studentNames, testScores, ARRAY_SIZE, TEST_ARRAY_SIZE);
     
     //average = getTestScores(student1Score, TEST_ARRAY_SIZE);
 
+//***************************************************************************************************
+    //cout << "13.\n";    
+
+//***************************************************************************************************
+    //cout << "14.\n"; 
+
+    // const int ARRAY_SIZE = 5;
+
+    // int lottery[ARRAY_SIZE];
+    // int user[ARRAY_SIZE];
+
+    // generateNumbers(lottery, ARRAY_SIZE);
+    // getUserNumbers(user, ARRAY_SIZE);
+    // displayResults(user, lottery, ARRAY_SIZE);
+    // compareResults(user, lottery, ARRAY_SIZE);
+
+//***************************************************************************************************
+    cout << "15.\n"; 
+
+    vector<int> pin1 {2, 4, 1, 8, 7, 9, 0};
+    vector<int> pin2 {2, 4, 6, 8, 7, 9, 0};
+
+
+
+//***************************************************************************************************
+    // cout << "16.\n";
     
+    // const int ARRAY_SIZE_NAMES = 29;
+    // const int ARRAY_SIZE_WIN = 108;
+    // string userTeam;
+    // int numWins;
+
+    // string teams[ARRAY_SIZE_NAMES];
+    // string champions[ARRAY_SIZE_WIN];
+
+    // storeTeam(teams, ARRAY_SIZE_NAMES);
+    // storeChampions(champions, ARRAY_SIZE_WIN);
+    // userTeam = userSelection(teams, ARRAY_SIZE_NAMES);
+    // numWins = getChampionships(userTeam, champions, ARRAY_SIZE_WIN);
+
+    // cout << userTeam << " have won the World Series " << numWins << " times.\n";
 
     return 0;
 }
@@ -902,3 +962,122 @@ void getTestScores(string names[], double scores[], int nameSize, int scoreSize)
     }
 }
 
+// 13.
+
+
+// 14.
+void generateNumbers(int lot[], int size){
+    srand(time(0));
+
+    for (int i = 0; i < size; i++)
+    {
+        lot[i] = rand() % 10 + 0;
+    }
+}
+void getUserNumbers(int userNums[], int size){
+    cout << "Enter numbers 0 - 9\n";
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Number " << i + 1 << ": ";
+        cin >> userNums[i];
+    }
+}
+void displayResults(int userNum[], int lotNums[], int size){
+    for (int i = 0; i < size; i++)
+    {
+        cout << lotNums[i] << " ";
+    }
+    cout << endl;
+    for (int i = 0; i < size; i++)
+    {
+        cout << userNum[i] << " ";
+    }
+}
+
+void compareResults(int userNumbers[], int lott[], int size){
+    int counter = 0;
+    
+    for (int i = 0; i < size; i++)
+    {
+        if (userNumbers[i] == lott[i])
+        {
+            cout << "\nThe matching digits were in element " << i + 1 << " being " << userNumbers[i] << " and " << lott[i];
+            counter++;
+        }
+        if (counter == size)
+        {
+            cout << "\nCongrats, you guessed all the numbers correctly! You win the grand prize!";
+        }
+    }
+}
+
+// 15.
+
+// 16.
+void storeTeam(string teamNames[], int size){
+    ifstream inputFile;
+
+    inputFile.open("Teams.txt");
+
+    if(inputFile)
+    {
+        cout << "\nFile is open. Reading team names into array.\n";
+    }
+    else
+    {
+        cout << "File did not open.";
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        getline(inputFile,teamNames[i]);
+
+    }
+    inputFile.close();
+}
+void storeChampions(string champs[], int size){
+    ifstream inputFile;
+
+    inputFile.open("WorldSeriesWinners.txt");
+
+    if(inputFile)
+    {
+        cout << "\nFile is open. Reading world series winners into array.\n";
+    }
+    else
+    {
+        cout << "File did not open.";
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        getline(inputFile,champs[i]);
+    }
+    inputFile.close();
+}
+string userSelection(string teamName[], int size){
+    string team;
+    
+    for (int i = 0; i < size; i++)
+    {
+        cout << teamName[i] << endl;
+    }
+    cout << "\nFor which team do you want to see how many championships they have won?\n";
+    getline(cin, team);
+
+    return team;
+}   
+int getChampionships(string userChoice, string champions[], int size){
+    int counter = 0;
+
+    for(int i = 0; i < size; i++)
+    {
+        if (userChoice == champions[i])
+        {
+            counter++;
+        }
+    }
+
+    return counter;
+}
