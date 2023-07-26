@@ -82,9 +82,6 @@ void getUserNumbers(int[], int);
 void displayResults(int[], int[], int);
 void compareResults(int[], int[], int);
 
-// 15.
-bool testPin(vector<int>, vector<int>);
-
 
 // 16.
 void storeTeam(string[], int);
@@ -313,7 +310,10 @@ int main(){
     vector<int> pin1 {2, 4, 1, 8, 7, 9, 0};
     vector<int> pin2 {2, 4, 6, 8, 7, 9, 0};
 
-
+    for(int i = 0; i < pin1.size(); i++)
+    {
+        cout << pin1[i] << endl;
+    }
 
 //***************************************************************************************************
     // cout << "16.\n";
